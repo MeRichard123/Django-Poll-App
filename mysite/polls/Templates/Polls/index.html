@@ -1,0 +1,22 @@
+{% extends "polls/base.html" %}
+<!--  -->
+{% block main_content %}
+<h1 class="display-4" style="margin: 50px 0;">Choose a question</h1>
+<!--  -->
+{% if latest_questions %}
+<ul class="list-group list-group-flush">
+  {% for question in latest_questions %}
+  <li style="list-style: none;">
+    <a
+      href="{% url 'polls:detail' question.id %}"
+      class="list-group-item list-group-item-action"
+      >{{ question.question_text }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+<!--  -->
+{% endblock %}

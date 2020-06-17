@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# When you make an app with `python manage.py startapp polls` you need to add it to apps
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

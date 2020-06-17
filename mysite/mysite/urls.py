@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
+# This is where you add routes for the site
+# I have the default / which will forward to polls
+# and admin which maps to the admin page
 urlpatterns = [
     path("", include("polls.urls")),
     path('admin/', admin.site.urls),

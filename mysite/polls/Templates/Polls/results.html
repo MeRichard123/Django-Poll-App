@@ -1,12 +1,14 @@
 {% extends "polls/base.html" %}
-<!--  -->
+<!-- Adding the base file -->
 {% block main_content %}
 <!--  -->
 <h1>{{ question.question_text }}</h1>
 
 <ul>
+<!--  question.choice_set.all points the foreign key to each item in the database  -->
   {% for choice in question.choice_set.all %}
   <li>
+<!--  this renders the number of votes with the word vote but if vote needs to be plural django pluralize adds an s    -->
     {{ choice.choice_text }} -- {{ choice.votes }}
     vote{{choice.votes|pluralize}}
   </li>
